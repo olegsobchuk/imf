@@ -1,0 +1,9 @@
+h1
+  ' Registration#new or to
+  = link_to 'Login Page', new_session_path
+
+= simple_form_for @user, url: registration_path do |f|
+  = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
+  = f.submit :go
