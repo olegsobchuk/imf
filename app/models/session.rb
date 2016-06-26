@@ -2,6 +2,7 @@ class Session < VirtualModel
   attr_accessor :email, :password
 
   delegate :id, to: :user, prefix: true
+  delegate :type, to: :user, prefix: true
 
   validates :email, :password, presence: true
   validate :credentials, unless: -> { password.blank? }

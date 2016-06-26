@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160620212638) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "type"
     t.integer  "company_id"
     t.string   "email"
     t.string   "password_digest"
