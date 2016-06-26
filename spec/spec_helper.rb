@@ -16,6 +16,9 @@ Capybara::Screenshot.prune_strategy = :keep_last_run
 Capybara::Screenshot.autosave_on_failure = true
 
 RSpec.configure do |config|
+  config.verbose_retry = true
+  config.display_try_failure_messages = true
+
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
@@ -47,9 +50,6 @@ RSpec.configure do |config|
       nil
     end
   end
-
-  config.verbose_retry = true
-  config.display_try_failure_messages = true
 
   config.around :each, :js do |example|
     example.run_with_retry retry: 3

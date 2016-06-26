@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
   def create
     @session = Session.new(params[:session])
     if @session.valid?
-      session[:user_id], session[:user_type] = @session.user_id, @session.user_type
-      redirect_to :root
+      session[:user_id] = @session.user_id
+      redirect_to current_user
     else
       render :new
     end

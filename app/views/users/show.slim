@@ -1,0 +1,21 @@
+= current_user.email
+div
+  = user_avatar(@profile.avatar_id)
+div
+  ' First Name:
+  = info_if_defined(@profile.first_name)
+div
+  ' Last Name:
+  = info_if_defined(@profile.last_name)
+div
+  ' Country:
+  = info_if_defined(@profile.country)
+hr
+h1 SKILLS
+= text_field_tag :skill
+hr
+h1 JOBS
+= link_to 'Add job', '#'
+hr
+h1 Companies
+= link_to 'Add company', '#'

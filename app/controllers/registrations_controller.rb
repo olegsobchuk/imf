@@ -1,10 +1,10 @@
 class RegistrationsController < ApplicationController
   def new
-    @user = Developer.new
+    @user = User.new
   end
 
   def create
-    @user = Developer.new(user_params)
+    @user = User.new(user_params)
     if @user.valid? && @user.save
       redirect_to new_session_path
     else
@@ -15,6 +15,6 @@ class RegistrationsController < ApplicationController
   private
 
   def user_params
-    params.require(:developer).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation)
   end
 end
