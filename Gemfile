@@ -36,11 +36,12 @@ end
 group :development do
   gem 'letter_opener'
   gem 'web-console', '~> 2.0'
-
+  gem 'better_errors'
   gem 'spring'
 end
 
 group :test do
   gem 'database_cleaner'
   gem 'fakeweb'
+  gem 'shoulda-matchers'
 end
