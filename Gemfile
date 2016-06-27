@@ -10,6 +10,7 @@ gem 'coffee-rails'
 gem 'factory_girl_rails'
 gem 'faker'
 gem 'sidekiq'
+gem 'sinatra', github: 'sinatra', require: false
 gem 'simple_form'
 gem 'slim-rails'
 gem 'sass-rails', '~> 5.0'
