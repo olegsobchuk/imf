@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.6'
+ruby '2.2.5'
+
+gem 'rails', '5.0.0.rc2'
 gem 'pg', '~> 0.15'
 
 gem 'bcrypt'
@@ -16,7 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'flickraw'
 
 gem 'jquery-rails'
-gem 'turbolinks'
+gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -26,7 +28,7 @@ group :development, :test do
   gem 'capybara-email'
   gem 'pry-rails'
   gem 'poltergeist'
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails', '3.5.0.beta1'
   gem 'rspec-retry'
   gem 'rspec-activemodel-mocks'
   gem 'rubocop',                                require: false
@@ -35,7 +37,7 @@ end
 
 group :development do
   gem 'letter_opener'
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
   gem 'better_errors'
   gem 'spring'
 end
