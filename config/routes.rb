@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   root 'sessions#new'
 
@@ -7,4 +9,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
   end
+
+  mount Sidekiq::Web => '/sidekiq'
 end
