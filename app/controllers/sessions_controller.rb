@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     @session = Session.new(params[:session])
     if @session.valid?
-      session[:user_id] = @session.user_id
+      session[:user_id] = cookies.signed[:user] = @session.user_id
       redirect_to current_user
     else
       render :new
@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
+    cookies.delete(:user)
     redirect_to :root
   end
 end
