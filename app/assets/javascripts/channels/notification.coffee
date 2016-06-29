@@ -6,7 +6,7 @@ App.notification = App.cable.subscriptions.create 'NotificationChannel',
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    # alert data['notification']
+    alert data['notification']
 
   notify: (notification) ->
     @perform 'notify', notification: notification

@@ -1,0 +1,9 @@
+tr
+  td
+    = user.email
+  td
+    = user.full_name
+  td
+    = user.location
+  td
+    = link_to 'Detail', admin_user_path(user)

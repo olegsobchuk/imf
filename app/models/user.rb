@@ -9,4 +9,7 @@ class User < ApplicationRecord
   has_and_belongs_to_many :companies
 
   after_create :create_profile
+
+  delegate :full_name, to: :profile
+  delegate :location, to: :profile
 end

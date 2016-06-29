@@ -9,6 +9,10 @@ Dir.glob(Rails.root.join('spec/support/**/*.rb')).each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  config.before(:suite) do
+    User.skip_callback(:create, :after, :create_profile)
+  end
+
   config.fixture_path = "#{::Rails.root}/spec/support/"
 
   config.use_transactional_fixtures = true
