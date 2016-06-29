@@ -10,7 +10,7 @@ class AdminController < ActionController::Base
   end
   helper_method :current_admin
 
-  def require_user
-    redirect_to new_session_path unless current_admin
+  def require_admin
+    redirect_to new_admin_session_path unless current_admin
   end
 end

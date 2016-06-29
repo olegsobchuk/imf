@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :users, only: :show
 
   namespace :admin do
+    resource :session, only: [:new, :create, :destroy]
+    resources :users, only: [:index, :show]
   end
 
   mount Sidekiq::Web => '/sidekiq'
