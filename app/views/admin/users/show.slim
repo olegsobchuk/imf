@@ -1,1 +1,20 @@
-h1 Admin#Users#Show
+h1 User's details
+
+table
+  tr
+    td Email
+    td = @user.email
+  tr
+    td Full Name
+    td = @user.full_name
+  tr
+    td Location
+    td = @user.location
+  tr
+    td Notification
+    td
+      = simple_form_for @notification do |f|
+        = f.input :content, label: false
+        = f.input :sender_id, as: :hidden, input_html: { value: current_admin.id }
+        = f.input :receiver_id, as: :hidden, input_html: { value: @user.id }
+        = f.submit :notify

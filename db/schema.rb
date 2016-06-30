@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630084425) do
+ActiveRecord::Schema.define(version: 20160630101740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,11 +33,12 @@ ActiveRecord::Schema.define(version: 20160630084425) do
   end
 
   create_table "notifications", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "receiver_id"
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_notifications_on_user_id", using: :btree
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "sender_id"
+    t.index ["receiver_id", "sender_id"], name: "index_notifications_on_receiver_id_and_sender_id", using: :btree
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -60,5 +61,5 @@ ActiveRecord::Schema.define(version: 20160630084425) do
     t.index ["company_id"], name: "index_users_on_company_id", using: :btree
   end
 
-  add_foreign_key "notifications", "users"
+  add_foreign_key "notifications", "users", column: "receiver_id"
 end
