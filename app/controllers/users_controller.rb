@@ -3,6 +3,6 @@ class UsersController < ApplicationController
 
   def show
     @profile = current_user.profile
-    @notifications_count = current_user.notifications.count
+    @notifications_count = current_user.received_notifications.count
   end
 end
