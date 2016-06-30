@@ -9,6 +9,6 @@ class Notification < ApplicationRecord
   private
 
   def send_notification
-    # build job what will send notification
+    NotificationJob.perform_later(self)
   end
 end
