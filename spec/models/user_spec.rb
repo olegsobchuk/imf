@@ -13,7 +13,7 @@ RSpec.describe User, type: :model do
 
   describe 'associations' do
     it { is_expected.to have_one(:profile) }
-    it { is_expected.to have_many(:notifications) }
+    it { is_expected.to have_many(:received_notifications) }
     it { is_expected.to have_and_belong_to_many(:companies) }
   end
 
