@@ -3,13 +3,13 @@ class NotificationsController < ApplicationController
   end
 
   def create
-    @notification = Notification.build(notification_params)
+    @notification = Notification.new(notification_params)
     @notification.valid? && @notification.save
   end
 
   private
 
   def notification_params
-    params.require(:notification).permit(:content)
+    params.require(:notification).permit(:receiver_id, :sender_id, :content)
   end
 end

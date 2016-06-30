@@ -6,7 +6,12 @@ App.notification = App.cable.subscriptions.create 'NotificationChannel',
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    alert data['notification']
+    change_count()
 
   notify: (notification) ->
     @perform 'notify', notification: notification
+
+  change_count = ->
+    block = $('#notification_number')
+    count = parseInt(block.html()) + 1
+    block.html(count).addClass('pale-red')
