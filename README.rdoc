@@ -1,28 +1,29 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project name: I am free or IMF
 
-Things you may want to cover:
+In use
 
-* Ruby version
+* Ruby 2.2.5
 
-* System dependencies
+* Rails 5.0.0.rc2
 
-* Configuration
+* PostgreSQL
 
-* Database creation
+* Tests: RSpec, Capybara
 
-* Database initialization
+* Services (Sidekiq, Flickr)
 
-* How to run the test suite
+== Run
 
-* Services (job queues, cache servers, search engines, etc.)
+1. <tt> git clone git@github.com:olegsobchuk/imf.git </tt>
 
-* Deployment instructions
+2. <tt> cd imf </tt>
 
-* ...
+3. set up database.yml from sample /config/database.yml.sample
 
+4. <tt> rake db:create db:migrate </tt>
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+5. <tt> rails s </tt>
+
+Oleg Sobchuk <oleg.sobchuk@gmail.com>
