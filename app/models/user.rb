@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates :password, length: { in: 6..30 }
 
   has_one :profile, dependent: :destroy
-  has_many :notifications
+  has_many :received_notifications, class_name: Notification, foreign_key: :receiver_id
   has_and_belongs_to_many :companies
 
   after_create :create_profile

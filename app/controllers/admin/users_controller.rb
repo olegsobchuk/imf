@@ -8,6 +8,7 @@ class Admin::UsersController < AdminController
 
   def show
     @profile = user.profile
+    @notification = user.received_notifications.build
   end
 
   private
