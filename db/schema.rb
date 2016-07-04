@@ -22,8 +22,9 @@ ActiveRecord::Schema.define(version: 20160630101740) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "companies_users", id: false, force: :cascade do |t|

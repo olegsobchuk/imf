@@ -1,5 +1,5 @@
 class Profile < ApplicationRecord
-  attr_accessor :avatar
+  attr_accessor :avatar, :lat, :lng
 
   belongs_to :user
 
