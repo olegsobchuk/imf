@@ -12,8 +12,10 @@ div
   ' Last Name:
   = info_if_defined(@profile.last_name)
 div
-  ' Country:
+  ' Location:
   = info_if_defined(@profile.location)
+div
+  = link_to 'Edit Profile', edit_user_profile_path(current_user)
 hr
 h1 SKILLS
 = text_field_tag :skill

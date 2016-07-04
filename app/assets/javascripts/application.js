@@ -12,5 +12,22 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require underscore
 //= require_tree .
+//= require turbolinks
+
+// function for building map
+function build_map(lat, lng){
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    marker = handler.addMarker(
+      {
+        "lat": lat,
+        "lng": lng
+      }
+    );
+    handler.bounds.extendWith(marker);
+    handler.getMap().setZoom(8);
+    handler.map.centerOn(marker)
+  });
+}

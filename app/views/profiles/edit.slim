@@ -1,0 +1,10 @@
+h1 Edit Profile
+div
+  = link_to 'Back', current_user
+= simple_form_for @profile, url: user_profile_path(current_user) do |f|
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :location, input_html: { id: 'user_location_input' }
+  #locations
+  #map.map
+  = f.submit :update
