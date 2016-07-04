@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
   resource :registration, only: [:new, :create]
-  resources :users, only: :show
+  resources :users, only: :show do
+    resource :profile, only: :update do
+      patch :avatar
+    end
+  end
   resources :notifications, only: [:index, :show, :create]
 
   namespace :admin do
