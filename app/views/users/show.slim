@@ -1,6 +1,10 @@
 = current_user.email
 div
   = user_avatar(@profile.avatar_id)
+  = form_tag avatar_user_profile_path(current_user), method: :patch, multipart: true do
+    = flash[:avatar]
+    = file_field_tag :avatar
+    = submit_tag :submit
 div
   ' First Name:
   = info_if_defined(@profile.first_name)
