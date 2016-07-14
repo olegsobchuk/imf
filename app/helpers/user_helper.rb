@@ -3,10 +3,7 @@ module UserHelper
     info || 'Was not defined'
   end
 
-  def user_avatar(image_id)
-    if image_id
-      info = FlickrService.get_info(image_id)
-      image_tag(FlickRaw.url_t(info))
-    end
+  def user_avatar(image_url)
+    image_tag(image_url)
   end
 end

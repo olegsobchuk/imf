@@ -1,6 +1,6 @@
 class Admin::SessionsController < AdminController
   def create
-    if admin && admin.authenticate(params[:password])
+    if admin.try(:authenticate, params[:password])
       session[:admin_id] = admin.id
       redirect_to admin_users_path
     else
