@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true, format: { with: /.+@.+\..+/i }
   validates :password, length: { in: 6..30 }
+  validates :password_confirmation, presence: true
 
   has_one :profile, dependent: :destroy
   has_many :received_notifications, class_name: Notification, foreign_key: :receiver_id

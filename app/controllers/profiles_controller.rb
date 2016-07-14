@@ -9,10 +9,7 @@ class ProfilesController < ApplicationController
 
   def avatar
     @profile.avatar = params[:avatar]
-    if profile.valid? && profile.save
-    else
-      flash[:avatar] = 'Wrong avatar upload'
-    end
+    flash[:avatar] = 'Wrong avatar upload' unless profile.valid? && profile.save
     redirect_to :back
   end
 

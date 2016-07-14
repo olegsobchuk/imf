@@ -6,7 +6,7 @@ class RegistrationsController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.valid? && @user.save
-      UserMailer.confirm_registration(@user).deliver_now
+      confirm_user
       redirect_to new_session_path
     else
       render :new
@@ -17,5 +17,9 @@ class RegistrationsController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)
+  end
+
+  def confirm_user
+    UserMailer.confirm_registration(@user).deliver_now
   end
 end

@@ -1,19 +1,19 @@
 = current_user.email
 div
-  = user_avatar(@profile.avatar_id)
+  = user_avatar(@profile_decorator.avatar_thumb)
   = form_tag avatar_user_profile_path(current_user), method: :patch, multipart: true do
     = flash[:avatar]
     = file_field_tag :avatar
     = submit_tag :submit
 div
   ' First Name:
-  = info_if_defined(@profile.first_name)
+  = info_if_defined(@profile_decorator.first_name)
 div
   ' Last Name:
-  = info_if_defined(@profile.last_name)
+  = info_if_defined(@profile_decorator.last_name)
 div
   ' Location:
-  = info_if_defined(@profile.location)
+  = info_if_defined(@profile_decorator.location)
 div
   = link_to 'Edit Profile', edit_user_profile_path(current_user)
 hr
