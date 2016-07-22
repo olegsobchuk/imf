@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'puma'
 gem 'redis'
+gem 'rollbar'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sidekiq'

@@ -195,6 +195,8 @@ GEM
       json (~> 1.4)
     redis (3.3.0)
     ref (2.0.0)
+    rollbar (2.12.0)
+      multi_json
     rspec-activemodel-mocks (1.0.3)
       activemodel (>= 3.0)
       activesupport (>= 3.0)
@@ -320,6 +322,7 @@ DEPENDENCIES
   puma
   rails (= 5.0.0.rc2)
   redis
+  rollbar
   rspec-activemodel-mocks
   rspec-rails (= 3.5.0.beta1)
   rspec-retry
