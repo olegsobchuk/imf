@@ -25,5 +25,3 @@ In use
 4. <tt> rake db:create db:migrate </tt>
 
 5. <tt> rails s </tt>
-
-Oleg Sobchuk <oleg.sobchuk@gmail.com>
